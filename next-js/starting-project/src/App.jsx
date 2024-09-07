@@ -2,8 +2,8 @@ import Post from "./components/Post";
 
 function App() {
   return <main>
-    <Post />
-    <Post />
+    <Post author="Oscar" body="React.js is awesome!"/>
+    <Post author="Maximilian" body="Hello world!"/>
     <Post />
     
   </main>
