@@ -1,30 +1,31 @@
 import { useState } from 'react';
 import classes from './NewPost.module.css';
 
-function NewPost({ onCancel, onAddPost }) {
+function NewPost({ onCancel, onAddPost }) { // Component receives two props: onCancel to handle cancel action, and onAddPost to handle adding a new post
     const [enteredBody, setEnteredBody] = useState(''); // Body text state
     const [enteredAuthor, setEnteredAuthor]=useState('');// Author text state
 
-    //Body text function
+     // Handler function to update state when the body text changes
     function bodyChangeHandler(event){
         console.log(event.target.value);
-        setEnteredBody(event.target.value);
+        setEnteredBody(event.target.value); // Updates the enteredBody state with the new value
     }
-    //Author text function
+      // Handler function to update state when the author's name changes
     function authorChangeHandler(event){
         console.log(event.target.value);
-        setEnteredAuthor(event.target.value);
+        setEnteredAuthor(event.target.value);// Updates the enteredAuthor state with the new value
     }
-
+     // Function to handle form submission
     function submitHandler(event){
-        event.preventDefault();
+        event.preventDefault();// Prevents the default form submission behavior (page reload)
+        // Creates a new post object with the entered body text and author name
         const postData = {
             body: enteredBody,
             author: enteredAuthor
         }
         console.log(postData);
-        onAddPost(postData);
-        onCancel();
+        onAddPost(postData);// Calls the onAddPost function (passed as a prop) to add the new post
+        onCancel();// Calls the onCancel function to close the form/modal
     }
 return (
 <form className={classes.form} onSubmit={submitHandler}>
