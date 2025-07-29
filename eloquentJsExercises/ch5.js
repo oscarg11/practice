@@ -93,3 +93,15 @@ const numbers = [1,2,3,4];
 const allPositiveNumbers = numbers.every(n => n > 0);
 
 console.log(allPositiveNumbers);
+
+/**
+4.) Dominant Writing Direction
+
+Write a function that computes the dominant writing direction in a string of text.
+Remember that each script object has a direction property that can be "ltr"(left to right),
+"rtl"(rigt to left), or "ttb"(top to bottom). 
+
+The dominant direction is the direction of a majority of the characters that have a script associated with them.
+The characterScript and the countBy functions defined earlier in the chapter are probably useful here.
+ */
+console.log("4.) Dominant Writing Direction");
